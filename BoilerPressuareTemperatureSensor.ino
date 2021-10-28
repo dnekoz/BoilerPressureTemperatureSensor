@@ -35,11 +35,10 @@ void setup() {
 
 void loop() {
 
-  int PressuareSensorSrcValue = analogRead(A0);
-  double PressuareSensorValue = (((PressuareSensorSrcValue/1024*3.3) - 0.5)*5)/4;
+  float PressuareSensorValue= ((float)analogRead(A0)/1024*3.3 - 0.5)*5/4; //*3,3) - 0,5)*5)/4
   
-  Serial.println(PressuareSensorSrcValue);
-  Serial.println((((PressuareSensorSrcValue/1024*3.3) - 0.5)*5)/4);
+  Serial.println(SrcVal);
+  Serial.println(PressureSensorValue);
   
   
   display.clearDisplay();
@@ -51,7 +50,7 @@ void loop() {
 
   display.setCursor(0, 31);
   display.print("T: ");
-  display.print("25");
+  display.print(SrcVal);
   display.println(" C");
 
   display.display();
