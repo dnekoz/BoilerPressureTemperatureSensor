@@ -120,8 +120,8 @@ void loop() {
   // выводим его на компьютер цифрами в кодировке ASCII
   //  Serial.println(average);
 
-  float PressureSensorValue = ((float)average * 3.35 * 5 - 512 * 5) / 4096;
-
+  float PressureSensorValue = ceil(100*((float)average * 3.3 * 5 - 512 * 5) / 4096)/100;
+  
   Serial.println(PressureSensorValue);
 
   display.clearDisplay();
