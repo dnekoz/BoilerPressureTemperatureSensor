@@ -19,7 +19,7 @@ const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;
 const int   daylightOffset_sec = 3600;
 
-const int numReadings = 10;
+const int numReadings = 20;
 
 int readings[numReadings];      // данные, считанные с входного аналогового контакта
 int idx = 0;                  // индекс для значения, которое считывается в данный момент
